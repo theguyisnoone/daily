@@ -1,6 +1,7 @@
 import os
 from multiprocessing import Manager,Queue,Pool
 
+#something about process
 
 def copyfile(q,fname,origin_name,path):
     rfile=open(origin_name+'/'+fname,'rb')
