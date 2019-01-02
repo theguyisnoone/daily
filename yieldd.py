@@ -1,4 +1,5 @@
 import time
+'''yield'''
 def test1():
     while True:
         print('----test1----')
