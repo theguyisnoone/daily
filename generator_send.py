@@ -17,7 +17,8 @@ ret=next(obj)
 print(ret)
 
 #or
-# obj.send(None)
+# ret=obj.send(None)
+# print(next)
 
 
 
