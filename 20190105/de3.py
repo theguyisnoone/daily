@@ -16,6 +16,6 @@ def test1(num,*args,**kwargs):
 
 
 
-test1(100)
-test1(100,200)
-test1(100,200,m=100)
+b=(100,200,300)
+c={'m':100}
+test1(*b,**c)
