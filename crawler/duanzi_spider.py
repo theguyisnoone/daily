@@ -28,8 +28,8 @@ class Duanzi_spider(object):
             a=len(result)
         return result
 
-    def save_file(self,result):
-        with open('neihan.txt','w') as f:
+    def save_file(self,result,filename):
+        with open(filename,'w') as f:
             for temp in result:
                 s=''.join(temp)#list --> string
                 f.write(s+'\n')
@@ -44,7 +44,8 @@ class Duanzi_spider(object):
         while True:
             html_str=self.load_Page(self.index_url%i)
             result=self.get_content(html_str)
-            self.save_file(result)
+            filename='neihan%d.txt'%i
+            self.save_file(result,filename)
             print('enter continue')
             print('quit to quit')
             command=input('>>>')
