@@ -3,7 +3,7 @@ import re
 
 class Duanzi_spider(object):
     def __init__(self):
-        self.index_url="https://www.neihan8.com/article/list_5_1.html" #list_5_x
+        self.index_url="https://www.neihan8.com/article/list_5_%d.html" #list_5_x
         self.headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"}
 
     def load_Page(self,url):
@@ -38,9 +38,21 @@ class Duanzi_spider(object):
 
 
     def run(self):
-        html_str=self.load_Page(self.index_url)
-        result=self.get_content(html_str)
-        self.save_file(result)
+
+        #loop
+        i=1
+        while True:
+            html_str=self.load_Page(self.index_url%i)
+            result=self.get_content(html_str)
+            self.save_file(result)
+            print('enter continue')
+            print('quit to quit')
+            command=input('>>>')
+            if command == 'quit':
+                break
+            i += 1
+
+
 # t1=Duanzi_spider('http://www.neihan8.com/')
 # t1.load_Page('http://www.neihan8.com/')
 
